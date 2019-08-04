@@ -8,6 +8,7 @@ const Container = styled.div`
   background-color: ${PRIMARY};
   display: flex;
   flex-flow: column;
+  align-items: center;
 `;
 const EmojiButton = styled.button`
   border: none;
@@ -16,6 +17,9 @@ const EmojiButton = styled.button`
   outline: none;
   font-size: 50px;
   margin: 10px;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
   &:hover {
     background-color: rgba(1, 1, 1, 0.1);
   }
