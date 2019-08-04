@@ -1,6 +1,18 @@
 import React, { useContext } from "react";
+import styled from "styled-components";
 import getMdFileFromDialog from "../../lib/getMdFileFromDialog";
 import FileContext from "../../lib/FileContext";
+import { PRIMARY } from "../../lib/colors";
+
+const PrimaryButton = styled.button`
+  cursor: pointer;
+  background-color: ${PRIMARY};
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  font-weight: bold;
+`;
 
 const OpenFileButton: React.FC = () => {
   const { setFilepath } = useContext(FileContext);
@@ -12,7 +24,7 @@ const OpenFileButton: React.FC = () => {
     }
   }
 
-  return <button onClick={handleClick}>Choose Markdown File</button>;
+  return <PrimaryButton onClick={handleClick}>Choose Markdown File</PrimaryButton>;
 };
 
 export default OpenFileButton;
