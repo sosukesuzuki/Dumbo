@@ -8,11 +8,11 @@ const App: React.FC = () => {
 
   useEffect(() => {
     if (filepath == null) {
-      document.title = "Dumbo"
+      document.title = "Dumbo";
     } else {
       document.title = filepath;
     }
-  }, [filepath])
+  }, [filepath]);
 
   return (
     <FileContext.Provider value={{ filepath, setFilepath }}>
