@@ -2,9 +2,7 @@ import fs from "fs";
 import { dirname } from "path";
 import { useContext, useState, useEffect } from "react";
 import FileContext from "./FileContext";
-import { promisify } from "util";
-
-const readFile = promisify(fs.readFile);
+import readFile from "./readFile";
 
 export default function(): null | string {
   const { filepath } = useContext(FileContext);
