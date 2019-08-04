@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import styled from "styled-components";
+import { extname } from "path";
 import FileContext from "../../../lib/FileContext";
 import { PRIMARY } from "../../../lib/colors";
 
@@ -26,9 +27,14 @@ document.ondragover = document.ondrop = function(e) {
 
 const OpenFileDnDArea: React.FC = () => {
   const { setFilepath } = useContext(FileContext);
+
   function handleDrop(e: React.DragEvent<HTMLDivElement>) {
-    setFilepath(e.dataTransfer.files[0].path);
+    const ext = extname(e.dataTransfer.files[0].path);
+    if (ext === ".md") {
+      setFilepath(e.dataTransfer.files[0].path);
+    }
   }
+
   return (
     <Container onDrop={handleDrop}>
       <p>{"Drag & Drop markdown file"}</p>
