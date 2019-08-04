@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
 import styled from "styled-components";
 import Renderer from "./Renderer";
-import OpenFileBox from "./OpenFile/OpenFileBox";
-import FileContext from "../lib/FileContext";
+import OpenFileBox from "../OpenFile/OpenFileBox";
+import FileContext from "../../lib/FileContext";
 
 const Container = styled.div`
   overflow-y: scroll;

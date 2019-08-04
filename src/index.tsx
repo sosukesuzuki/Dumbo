@@ -3,8 +3,8 @@ import styled from "styled-components";
 import "normalize.css";
 import ReactDOM from "react-dom";
 import FileContext from "./lib/FileContext";
-import Main from "./components/Main";
-import SideNav from "./components/SideNav";
+import Main from "./components/templates/Main";
+import SideNav from "./components/templates/SideNav";
 
 const Container = styled.div`
   display: grid;
