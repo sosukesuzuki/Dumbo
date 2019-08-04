@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import styled from "styled-components";
 import getMdFileFromDialog from "../../../lib/electron/getMdFileFromDialog";
 import FileContext from "../../../lib/FileContext";
-import { PRIMARY } from "../../../lib/colors";
+import { PRIMARY, STRONG } from "../../../lib/colors";
 
 const PrimaryButton = styled.button`
   cursor: pointer;
@@ -12,6 +12,10 @@ const PrimaryButton = styled.button`
   border-radius: 5px;
   padding: 10px;
   font-weight: bold;
+  outline: none;
+  &:hover {
+    background-color: ${STRONG};
+  }
 `;
 
 const OpenFileButton: React.FC = () => {
