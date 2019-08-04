@@ -13,6 +13,7 @@ const copyRules = [
 ];
 
 const configuration: webpack.Configuration = {
+  target: "electron-renderer",
   mode: MODE,
   devtool: DEV ? "inline-source-map" : "source-map",
   resolve: {
