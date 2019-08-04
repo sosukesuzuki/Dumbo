@@ -1,4 +1,5 @@
 import fs from "fs";
+import { dirname } from "path";
 import { useContext, useState, useEffect } from "react";
 import FileContext from "./FileContext";
 import { promisify } from "util";
@@ -17,8 +18,8 @@ export default function(): null | string {
 
       const watcher = fs.watch(filepath, { encoding: "utf8" });
       watcher.on("change", (eventType, filename) => {
-        if (eventType === "change" && filename) {
-          readFile(filename, "utf8").then(value => {
+        if (eventType === "rename" && filename) {
+          readFile(`${dirname(filepath)}/${filename}`, "utf8").then(value => {
             setFileContent(value);
           });
         }
