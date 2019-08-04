@@ -22,6 +22,7 @@ const EmojiButton = styled.button`
 const SideNav: React.FC = () => {
   return (
     <Container>
+      <EmojiButton>🍤</EmojiButton>
       <EmojiButton>✨</EmojiButton>
       <EmojiButton>👻</EmojiButton>
       <EmojiButton>👺</EmojiButton>
