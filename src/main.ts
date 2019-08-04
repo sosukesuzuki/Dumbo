@@ -1,17 +1,21 @@
 import { app, BrowserWindow } from "electron";
 import { join } from "path";
 
+const isDev = process.env.NODE_ENV === "development";
+
 let mainWindow: Electron.BrowserWindow | null;
 
 function createWindow() {
   mainWindow = new BrowserWindow({
     height: 600,
-    width: 800,
+    width: 800
   });
 
-  mainWindow.loadFile(join(__dirname, "./index.html"));
+  console.log({ isDev });
 
-  mainWindow.webContents.openDevTools();
+  isDev
+    ? mainWindow.loadURL("http://localhost:3000/index.html")
+    : mainWindow.loadFile(join(__dirname, "./index.html"));
 
   mainWindow.on("closed", () => {
     mainWindow = null;

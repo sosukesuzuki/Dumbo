@@ -8,8 +8,8 @@
   "scripts": {
     "build:webpack": "cross-env TS_NODE_PROJECT=\"tsconfig.json\" webpack",
     "dev:webpack": "cross-env TS_NODE_PROJECT=\"tsconfig.json\" webpack-dev-server --port=3000",
-    "build:tsc": "tsc",
-    "dev": "electron ./dist/main.js",
+    "build": "yarn clean && tsc",
+    "dev:electron": "cross-env NODE_ENV=development electron ./dist/main.js",
     "clean": "rimraf dist",
     "format": "prettier --write \"{,**/}*.{ts,tsx,json,html,md}\""
   },
@@ -24,6 +24,7 @@
     "prettier": "^1.18.2",
     "rimraf": "^2.6.3",
     "style-loader": "^0.23.1",
+    "ts-loader": "^6.0.4",
     "ts-node": "^8.3.0",
     "tsconfig-paths": "^3.8.0",
     "typescript": "^3.5.3",
