@@ -1,8 +1,16 @@
 import React, { useState, useEffect } from "react";
+import styled from "styled-components";
 import "normalize.css";
 import ReactDOM from "react-dom";
 import FileContext from "./lib/FileContext";
 import Main from "./components/Main";
+import SideNav from "./components/SideNav";
+
+const Container = styled.div`
+  display: grid;
+  grid-template-rows: 100vh;
+  grid-template-columns: 100px 1fr;
+`;
 
 const App: React.FC = () => {
   const [filepath, setFilepath] = useState<string | null>(null);
@@ -17,7 +25,10 @@ const App: React.FC = () => {
 
   return (
     <FileContext.Provider value={{ filepath, setFilepath }}>
-      <Main />
+      <Container>
+        <SideNav />
+        <Main />
+      </Container>
     </FileContext.Provider>
   );
 };
