@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import styled from "styled-components";
-import Renderer from "./Renderer";
+import Renderer from "../organisms/Renderer";
 import OpenFileBox from "../organisms/OpenFile/OpenFileBox";
 import FileContext from "../../lib/FileContext";
 
