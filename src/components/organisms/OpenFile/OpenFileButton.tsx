@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
 import styled from "styled-components";
-import getMdFileFromDialog from "../../lib/electron/getMdFileFromDialog";
-import FileContext from "../../lib/FileContext";
-import { PRIMARY } from "../../lib/colors";
+import getMdFileFromDialog from "../../../lib/electron/getMdFileFromDialog";
+import FileContext from "../../../lib/FileContext";
+import { PRIMARY } from "../../../lib/colors";
 
 const PrimaryButton = styled.button`
   cursor: pointer;

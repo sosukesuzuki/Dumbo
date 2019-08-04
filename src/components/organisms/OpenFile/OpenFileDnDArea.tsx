@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import styled from "styled-components";
-import FileContext from "../../lib/FileContext";
-import { PRIMARY } from "../../lib/colors";
+import FileContext from "../../../lib/FileContext";
+import { PRIMARY } from "../../../lib/colors";
 
 const Container = styled.div`
   width: 500px;

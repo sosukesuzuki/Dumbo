@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import OpenFileButton from "./OpenFileButton";
 import OpenFileDnDArea from "./OpenFileDnDArea";
-import { BORDER, BACKGROUND } from "../../lib/colors";
+import { BORDER, BACKGROUND } from "../../../lib/colors";
 
 const Container = styled.div`
   background-color: ${BACKGROUND};
