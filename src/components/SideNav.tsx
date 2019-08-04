@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
 import { PRIMARY } from "../lib/colors";
+import FileContext from "../lib/FileContext";
 
 const Container = styled.div`
   background-color: ${PRIMARY};
@@ -20,9 +21,13 @@ const EmojiButton = styled.button`
 `;
 
 const SideNav: React.FC = () => {
+  const { resetFilepath } = useContext(FileContext);
+
   return (
     <Container>
-      <EmojiButton>🍤</EmojiButton>
+      <EmojiButton onClick={() => {
+        resetFilepath()
+      }}>🍤</EmojiButton>
       <EmojiButton>✨</EmojiButton>
       <EmojiButton>👻</EmojiButton>
       <EmojiButton>👺</EmojiButton>

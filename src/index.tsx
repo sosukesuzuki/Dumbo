@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import styled from "styled-components";
 import "normalize.css";
 import ReactDOM from "react-dom";
@@ -23,8 +23,12 @@ const App: React.FC = () => {
     }
   }, [filepath]);
 
+  const resetFilepath = useCallback(() => {
+    setFilepath(null);
+  }, [setFilepath])
+
   return (
-    <FileContext.Provider value={{ filepath, setFilepath }}>
+    <FileContext.Provider value={{ filepath, setFilepath, resetFilepath }}>
       <Container>
         <SideNav />
         <Main />
