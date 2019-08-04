@@ -7,9 +7,9 @@
   "author": "Sosuke Suzuki <aosukeke@gmail.com>",
   "scripts": {
     "build:webpack": "cross-env TS_NODE_PROJECT=\"tsconfig.json\" webpack",
-    "dev:webpack": "cross-env TS_NODE_PROJECT=\"tsconfig.json\" webpack-dev-server --port=3000",
-    "build": "yarn clean && tsc",
-    "dev:electron": "cross-env NODE_ENV=development electron ./dist/main.js",
+    "start:webpack": "cross-env TS_NODE_PROJECT=\"tsconfig.json\" webpack-dev-server --port=3000",
+    "build:electron": "yarn clean && tsc",
+    "start:electron": "yarn build:electron && cross-env NODE_ENV=development electron ./dist/main.js",
     "clean": "rimraf dist",
     "format": "prettier --write \"{,**/}*.{ts,tsx,json,html,md}\""
   },
