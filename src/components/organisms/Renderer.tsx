@@ -12,15 +12,11 @@ const Container = styled.div`
 const Renderer: React.FC = () => {
   const fileContent = useFileContent();
 
-  if (!fileContent) {
-    return null;
-  }
-
   return (
     <Container
       className="markdown-body"
       dangerouslySetInnerHTML={{
-        __html: markdownProcessor.processSync(fileContent).toString()
+        __html: markdownProcessor.processSync(fileContent!).toString()
       }}
     />
   );
