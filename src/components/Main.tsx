@@ -1,15 +1,13 @@
 import React from "react";
 import Renderer from "./Renderer";
-import OpenFileButton from "./OpenFileButton";
-import OpenFileDnDArea from "./OpenFileDnDArea"
+import OpenFileBox from "./OpenFile/OpenFileBox";
 
 const Main: React.FC = () => {
   return (
-    <>
-      <OpenFileButton />
-      <OpenFileDnDArea />
+    <div>
+      <OpenFileBox />
       <Renderer />
-    </>
+    </div>
   );
 };
 

@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import FileContext from "../lib/FileContext";
+import FileContext from "../../lib/FileContext";
 
 document.ondragover = document.ondrop = function (e) {
   e.preventDefault()
@@ -17,7 +17,7 @@ const OpenFileDnDArea: React.FC = () => {
       height: "300px"
     }}
     onDrop={handleDrop}>
-      <p>{"Please drag & drop your markdown file"}</p>
+      <p>{"Please drag & drop markdown file"}</p>
     </div>
   )
 };

@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
-import getMdFileFromDialog from "../lib/getMdFileFromDialog";
-import FileContext from "../lib/FileContext";
+import getMdFileFromDialog from "../../lib/getMdFileFromDialog";
+import FileContext from "../../lib/FileContext";
 
 const OpenFileButton: React.FC = () => {
   const { setFilepath } = useContext(FileContext);
@@ -12,7 +12,7 @@ const OpenFileButton: React.FC = () => {
     }
   }
 
-  return <button onClick={handleClick}>Open your markdown file</button>;
+  return <button onClick={handleClick}>Choose Markdown File</button>;
 };
 
 export default OpenFileButton;
