@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import styled from "styled-components";
 import { PRIMARY } from "../lib/colors";
 import FileContext from "../lib/FileContext";
-import formatByFilepath from "../lib/formatByFilepath";
+import formatByFilepath from "../lib/prettier/formatByFilepath";
 
 const Container = styled.div`
   background-color: ${PRIMARY};

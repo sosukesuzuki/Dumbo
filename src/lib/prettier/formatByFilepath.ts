@@ -1,6 +1,6 @@
 import format from "./format";
-import writeFile from "./fs/writeFile";
-import readFile from "./fs/readFile";
+import writeFile from "../fs/writeFile";
+import readFile from "../fs/readFile";
 
 export default async function(filepath: string): Promise<void> {
   const value = await readFile(filepath, "utf8");
