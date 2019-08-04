@@ -30,7 +30,7 @@ const SideNav: React.FC = () => {
           resetFilepath();
         }}
       >
-        🍤
+        🐘
       </EmojiButton>
     </Container>
   );
