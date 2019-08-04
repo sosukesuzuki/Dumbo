@@ -7,7 +7,10 @@
   <div class="root"></div>
   <script type="module">
     (async () => {
-      await import("./main.js");
+      const rootEl = document.querySelector(".root");
+
+      rootEl.innerHTML = `<p>Loading...</p>`;
+      import("./main.js");
     })();
   </script>
 </body>
