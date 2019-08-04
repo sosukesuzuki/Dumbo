@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import "normalize.css";
 import ReactDOM from "react-dom";
 import FileContext from "./lib/FileContext";
 import Main from "./components/Main";
