@@ -25,14 +25,18 @@ const SideNav: React.FC = () => {
 
   return (
     <Container>
-      <EmojiButton onClick={() => {
-        resetFilepath()
-      }}>🍤</EmojiButton>
+      <EmojiButton
+        onClick={() => {
+          resetFilepath();
+        }}
+      >
+        🍤
+      </EmojiButton>
       <EmojiButton>✨</EmojiButton>
       <EmojiButton>👻</EmojiButton>
       <EmojiButton>👺</EmojiButton>
     </Container>
-  )
-}
+  );
+};
 
 export default SideNav;

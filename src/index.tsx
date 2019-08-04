@@ -25,7 +25,7 @@ const App: React.FC = () => {
 
   const resetFilepath = useCallback(() => {
     setFilepath(null);
-  }, [setFilepath])
+  }, [setFilepath]);
 
   return (
     <FileContext.Provider value={{ filepath, setFilepath, resetFilepath }}>

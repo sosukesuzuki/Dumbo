@@ -10,11 +10,7 @@ const Container = styled.div`
 
 const Main: React.FC = () => {
   const { filepath } = useContext(FileContext);
-  return (
-    <Container>
-      { !filepath ? <OpenFileBox /> : <Renderer /> }
-    </Container>
-  );
+  return <Container>{!filepath ? <OpenFileBox /> : <Renderer />}</Container>;
 };
 
 export default Main;

@@ -30,9 +30,7 @@ const OpenFileDnDArea: React.FC = () => {
     setFilepath(e.dataTransfer.files[0].path);
   }
   return (
-    <Container
-      onDrop={handleDrop}
-    >
+    <Container onDrop={handleDrop}>
       <p>{"Drag & Drop markdown file"}</p>
       <span>📑</span>
     </Container>
