@@ -1,6 +1,6 @@
 # Dumbo
 
-The Markdown Previewer
+Dumbo is the Markdown Previewer
 
 ## Development
 
@@ -9,6 +9,5 @@ yarn run start:webpack
 ```
 
 ```sh
-# In Other Terminal
 yarn run start:electron
 ```
