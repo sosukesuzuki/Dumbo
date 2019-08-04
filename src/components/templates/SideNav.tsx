@@ -2,7 +2,6 @@ import React, { useContext } from "react";
 import styled from "styled-components";
 import { PRIMARY } from "../../lib/colors";
 import FileContext from "../../lib/FileContext";
-import formatByFilepath from "../../lib/prettier/formatByFilepath";
 
 const Container = styled.div`
   background-color: ${PRIMARY};
@@ -26,7 +25,7 @@ const EmojiButton = styled.button`
 `;
 
 const SideNav: React.FC = () => {
-  const { filepath, resetFilepath } = useContext(FileContext);
+  const { resetFilepath } = useContext(FileContext);
 
   return (
     <Container>
@@ -36,15 +35,6 @@ const SideNav: React.FC = () => {
         }}
       >
         🐘
-      </EmojiButton>
-      <EmojiButton
-        onClick={() => {
-          if (typeof filepath === "string") {
-            formatByFilepath(filepath);
-          }
-        }}
-      >
-        ✨
       </EmojiButton>
     </Container>
   );
