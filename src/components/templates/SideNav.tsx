@@ -33,11 +33,13 @@ const SideNav: React.FC = () => {
       >
         🐘
       </EmojiButton>
-      <EmojiButton onClick={() => {
-        if (typeof filepath === "string") {
-         formatByFilepath(filepath);
-        }
-      }}>
+      <EmojiButton
+        onClick={() => {
+          if (typeof filepath === "string") {
+            formatByFilepath(filepath);
+          }
+        }}
+      >
         ✨
       </EmojiButton>
     </Container>
