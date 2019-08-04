@@ -32,7 +32,6 @@ const SideNav: React.FC = () => {
       >
         🍤
       </EmojiButton>
-      <EmojiButton>✨</EmojiButton>
     </Container>
   );
 };
