@@ -1,28 +1,18 @@
 import { join } from "path";
 import readFile from "../fs/readFile";
-import stat from "../fs/stat";
+import { isExists } from "../fs/stat";
+import getDumboDirpath from "./getDumboDirpath";
 
 type Dumborc = {
   plugins: string[];
 };
 
 export default async function(): Promise<Dumborc> {
-  const homeDir =
-    process.env[process.platform == "win32" ? "USERPROFILE" : "HOME"];
+  const dumborcpath = join(getDumboDirpath(), "/dumborc.json");
 
-  const dumborcpath = join(homeDir, "/.dumbo", "/dumborc.json");
+  const isExistsDumborc = await isExists(dumborcpath);
 
-  let isExists: boolean = false;
-  try {
-    await stat(dumborcpath);
-    isExists = true;
-  } catch (error) {
-    if (error.code === "ENOENT") {
-      isExists = false;
-    }
-  }
-
-  if (isExists) {
+  if (isExistsDumborc) {
     const value = await readFile(dumborcpath, "utf8");
     const dumborc = JSON.parse(value);
 
