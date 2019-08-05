@@ -28,15 +28,13 @@ export default async function(): Promise<void> {
   );
 
   try {
-    if (isExistsPackageJson) {
-      await exec(
-        `cd ${dumboDirpath} && npm install --save-dev ${stringifiedPlugins}`
-      );
-    } else {
-      await exec(
-        `cd ${dumboPluginspath} && npm init -y && npm install --save ${stringifiedPlugins}`
-      );
-    }
+    await exec(
+      `cd ${dumboDirpath} ${
+        isExistsPackageJson
+          ? ""
+          : "&& rm -rf ./node_modules ./package-lock.json && npm init -y"
+      } && npm install --save-dev ${stringifiedPlugins}`
+    );
   } catch (error) {
     throw error;
   }
