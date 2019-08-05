@@ -10,12 +10,6 @@ export default async function(): Promise<Dumborc> {
   const homeDir =
     process.env[process.platform == "win32" ? "USERPROFILE" : "HOME"];
 
-  if (!homeDir) {
-    return {
-      plugins: []
-    };
-  }
-
   const dumborcpath = join(homeDir, "/.dumbo", "/dumborc.json");
 
   let isExists: boolean = false;
