@@ -1,7 +1,7 @@
 import fs from "fs";
 import { dirname } from "path";
 import { useContext, useState, useEffect } from "react";
-import FileContext from "../FileContext";
+import FileContext from "../contexts/FileContext";
 import readFile from "../fs/readFile";
 
 export default function(): null | string {

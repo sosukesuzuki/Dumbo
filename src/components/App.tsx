@@ -1,8 +1,10 @@
 import React, { useState, useEffect, useCallback } from "react";
 import styled from "styled-components";
-import FileContext from "../lib/FileContext";
+import FileContext from "../lib/contexts/FileContext";
+import ConfigContext from "../lib/contexts/ConfigContext";
 import Main from "./templates/Main";
 import SideNav from "./templates/SideNav";
+import { Configuration } from "src/lib/ConfigManager";
 
 const Container = styled.div`
   display: grid;
@@ -10,7 +12,11 @@ const Container = styled.div`
   grid-template-columns: 100px 1fr;
 `;
 
-const App: React.FC = () => {
+type Props = {
+  config: Configuration;
+};
+
+const App: React.FC<Props> = ({ config }) => {
   const [filepath, setFilepath] = useState<string | null>(null);
 
   useEffect(() => {
@@ -26,12 +32,14 @@ const App: React.FC = () => {
   }, [setFilepath]);
 
   return (
-    <FileContext.Provider value={{ filepath, setFilepath, resetFilepath }}>
-      <Container>
-        <SideNav />
-        <Main />
-      </Container>
-    </FileContext.Provider>
+    <ConfigContext.Provider value={{ config }}>
+      <FileContext.Provider value={{ filepath, setFilepath, resetFilepath }}>
+        <Container>
+          <SideNav />
+          <Main />
+        </Container>
+      </FileContext.Provider>
+    </ConfigContext.Provider>
   );
 };
 

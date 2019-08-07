@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import styled from "styled-components";
 import { extname } from "path";
-import FileContext from "../../../lib/FileContext";
+import FileContext from "../../../lib/contexts/FileContext";
 import { PRIMARY } from "../../../lib/colors";
 
 const Container = styled.div`
