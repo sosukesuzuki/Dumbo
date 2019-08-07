@@ -1,25 +1,22 @@
 import { readFileSync } from "fs";
 import { join } from "path";
+import { Themes, Colors, themes } from "./themes";
 
 export type Configuration = {
-  theme: {
-    primary: string;
-    background: string;
-    body: string;
-  };
+  theme: keyof Themes;
 };
 
 const defaultConfig: Configuration = {
-  theme: {
-    primary: "#4dabf7",
-    background: "#fff",
-    body: "#3d3d3d"
-  }
+  theme: "DEFAULT"
 };
 Object.freeze(defaultConfig);
 
 export default class ConfigManager {
   readonly config: Configuration = this.readConfig();
+
+  get theme(): Colors {
+    return themes[this.config.theme];
+  } 
 
   private readConfig(): Configuration {
     const configFilePath = join(this.homeDirPath, "/.dumbo", "/dumborc.json");
@@ -40,12 +37,7 @@ export default class ConfigManager {
 
   private isValidConfig(config: any): boolean {
     const theme = config["theme"];
-    if (
-      theme &&
-      typeof theme["primary"] === "string" &&
-      typeof theme["background"] === "string" &&
-      typeof theme["body"] === "string"
-    ) {
+    if (typeof theme === "string") {
       if (Object.keys(config).length === Object.keys(defaultConfig).length) {
         return true;
       }

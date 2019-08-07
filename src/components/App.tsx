@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useCallback } from "react";
 import styled from "styled-components";
 import FileContext from "../lib/contexts/FileContext";
-import ConfigContext from "../lib/contexts/ConfigContext";
+import ThemeContext from "../lib/contexts/ThemeContext";
 import Main from "./templates/Main";
 import SideNav from "./templates/SideNav";
-import { Configuration } from "src/lib/ConfigManager";
+import { Colors } from "src/lib/themes";
 
 const Container = styled.div`
   display: grid;
@@ -13,10 +13,10 @@ const Container = styled.div`
 `;
 
 type Props = {
-  config: Configuration;
+  theme: Colors;
 };
 
-const App: React.FC<Props> = ({ config }) => {
+const App: React.FC<Props> = ({ theme }) => {
   const [filepath, setFilepath] = useState<string | null>(null);
 
   useEffect(() => {
@@ -32,14 +32,14 @@ const App: React.FC<Props> = ({ config }) => {
   }, [setFilepath]);
 
   return (
-    <ConfigContext.Provider value={{ config }}>
+    <ThemeContext.Provider value={{ theme }}>
       <FileContext.Provider value={{ filepath, setFilepath, resetFilepath }}>
         <Container>
           <SideNav />
           <Main />
         </Container>
       </FileContext.Provider>
-    </ConfigContext.Provider>
+    </ThemeContext.Provider>
   );
 };
 

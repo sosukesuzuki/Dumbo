@@ -5,6 +5,6 @@ import ConfigManager from "./lib/ConfigManager";
 import "normalize.css";
 
 const configManager = new ConfigManager();
-const { config } = configManager;
+const { theme } = configManager;
 
-ReactDOM.render(<App config={config} />, document.querySelector(".root"));
+ReactDOM.render(<App theme={theme} />, document.querySelector(".root"));

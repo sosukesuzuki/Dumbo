@@ -2,16 +2,16 @@ import React, { useContext } from "react";
 import styled from "styled-components";
 import { extname } from "path";
 import FileContext from "../../../lib/contexts/FileContext";
-import { PRIMARY } from "../../../lib/colors";
+import ThemeContext from "../../../lib/contexts/ThemeContext";
 
-const Container = styled.div`
+const Container = styled.div<{ primary: string }>`
   width: 500px;
   height: 250px;
-  border: 2px dashed ${PRIMARY};
+  border: 2px dashed ${({ primary}) => primary};
   border-radius: 5px;
   margin: 20px auto;
   p {
-    color: ${PRIMARY};
+    color: ${({ primary}) => primary};
     font-weight: bold;
   }
   span {
@@ -27,6 +27,7 @@ document.ondragover = document.ondrop = function(e) {
 
 const OpenFileDnDArea: React.FC = () => {
   const { setFilepath } = useContext(FileContext);
+  const { theme } = useContext(ThemeContext);
 
   function handleDrop(e: React.DragEvent<HTMLDivElement>) {
     const ext = extname(e.dataTransfer.files[0].path);
@@ -36,7 +37,7 @@ const OpenFileDnDArea: React.FC = () => {
   }
 
   return (
-    <Container onDrop={handleDrop}>
+    <Container onDrop={handleDrop} {...theme}>
       <p>{"Drag & Drop markdown file"}</p>
       <span>📑</span>
     </Container>

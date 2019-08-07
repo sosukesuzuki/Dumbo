@@ -2,24 +2,22 @@ import React, { useContext } from "react";
 import styled from "styled-components";
 import getMdFileFromDialog from "../../../lib/electron/getMdFileFromDialog";
 import FileContext from "../../../lib/contexts/FileContext";
-import { PRIMARY, STRONG } from "../../../lib/colors";
+import ThemeContext from "../../../lib/contexts/ThemeContext";
 
-const PrimaryButton = styled.button`
+const PrimaryButton = styled.button<{ primary: string }>`
   cursor: pointer;
-  background-color: ${PRIMARY};
+  background-color: ${({ primary }) => primary};
   color: #fff;
   border: none;
   border-radius: 5px;
   padding: 10px;
   font-weight: bold;
   outline: none;
-  &:hover {
-    background-color: ${STRONG};
-  }
 `;
 
 const OpenFileButton: React.FC = () => {
   const { setFilepath } = useContext(FileContext);
+  const { theme } = useContext(ThemeContext);
 
   async function handleClick() {
     const filenames = await getMdFileFromDialog();
@@ -29,7 +27,7 @@ const OpenFileButton: React.FC = () => {
   }
 
   return (
-    <PrimaryButton onClick={handleClick}>Choose Markdown File</PrimaryButton>
+    <PrimaryButton onClick={handleClick} {...theme}>Choose Markdown File</PrimaryButton>
   );
 };
 
