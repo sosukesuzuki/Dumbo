@@ -21,9 +21,7 @@ const Renderer: React.FC = () => {
   const isFileLoading = useIsFileLoading();
 
   if (isFileLoading) {
-    return (
-      <p>...Loading</p>
-    )
+    return <p>...Loading</p>;
   }
 
   return (
