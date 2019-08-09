@@ -1,4 +1,4 @@
-import { readFileSync } from "fs";
+import { readFileSync, statSync } from "fs";
 import { join } from "path";
 import { Themes, Colors, themes } from "./themes";
 
@@ -23,19 +23,26 @@ export default class ConfigManager {
       process.platform === "win32" ? "USERPROFILE" : "HOME"
     ] as string;
     const configFilePath = join(homeDirPath, "/.dumbo", "/dumborc.json");
+    const stats = statSync(configFilePath);
+
+    if (!stats) {
+      this.consoleErrorMessage(`${configFilePath} does not exists.`)
+      return defaultConfig;
+    }
+
     const configString = readFileSync(configFilePath, "utf8");
     const config = JSON.parse(configString);
 
     if (this.isValidConfig(config)) {
       return config;
     } else {
-      this.throwInvalidConfigExeption();
+      this.consoleErrorMessage(`${configFilePath} is invalid.`);
       return defaultConfig;
     }
   }
 
-  private throwInvalidConfigExeption() {
-    console.error(".dumborc is invalid");
+  private consoleErrorMessage(msg: string) {
+    console.error(msg);
   }
 
   private isValidConfig(config: any): boolean {
