@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import styled from "styled-components";
+import LoadingElephant from "../atoms/LoadingElephant";
 import "github-markdown-css";
 import "highlight.js/styles/github.css";
 import markdownProcessor from "../../lib/markdownProcessor";
@@ -21,7 +22,7 @@ const Renderer: React.FC = () => {
   const isFileLoading = useIsFileLoading();
 
   if (isFileLoading) {
-    return <p>...Loading</p>;
+    return <LoadingElephant />;
   }
 
   return (
