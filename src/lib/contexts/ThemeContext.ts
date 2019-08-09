@@ -6,7 +6,7 @@ export type State = {
 };
 
 const ThemeContext = createContext<State>({
-  theme: themes.DEFAULT
+  theme: themes.WHITE
 });
 
 export default ThemeContext;

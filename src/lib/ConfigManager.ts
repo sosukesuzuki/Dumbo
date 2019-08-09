@@ -7,7 +7,7 @@ export type Configuration = {
 };
 
 const defaultConfig: Configuration = {
-  theme: "DEFAULT"
+  theme: "WHITE"
 };
 Object.freeze(defaultConfig);
 
@@ -19,7 +19,10 @@ export default class ConfigManager {
   } 
 
   private readConfig(): Configuration {
-    const configFilePath = join(this.homeDirPath, "/.dumbo", "/dumborc.json");
+    const homeDirPath = process.env[
+      process.platform === "win32" ? "USERPROFILE" : "HOME"
+    ] as string;
+    const configFilePath = join(homeDirPath, "/.dumbo", "/dumborc.json");
     const configString = readFileSync(configFilePath, "utf8");
     const config = JSON.parse(configString);
 
@@ -37,17 +40,11 @@ export default class ConfigManager {
 
   private isValidConfig(config: any): boolean {
     const theme = config["theme"];
-    if (typeof theme === "string") {
+    if (theme === "WHITE" || theme === "BLACK") {
       if (Object.keys(config).length === Object.keys(defaultConfig).length) {
         return true;
       }
     }
     return false;
-  }
-
-  private get homeDirPath(): string {
-    return process.env[
-      process.platform == "win32" ? "USERPROFILE" : "HOME"
-    ] as string;
   }
 }
