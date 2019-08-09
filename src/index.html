@@ -5,11 +5,23 @@
 </head>
 <body>
   <div class="root"></div>
+  <style>
+    .loading {
+      animation: spin 1.5s linear infinite;;
+      font-size: 200px;
+      width: 200px;
+      margin: auto;
+    }
+    @keyframes spin {
+      0% {transform: rotate(0deg);}
+      100% {transform: rotate(360deg);}
+    }
+  </style>
   <script type="module">
     (async () => {
       const rootEl = document.querySelector(".root");
 
-      rootEl.innerHTML = `<p>Loading...</p>`;
+      rootEl.innerHTML = `<div class="loading">${"🐘"}</div>`;
       import("./main.js");
     })();
   </script>
