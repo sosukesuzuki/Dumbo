@@ -7,11 +7,11 @@ import ThemeContext from "../../../lib/contexts/ThemeContext";
 const Container = styled.div<{ primary: string }>`
   width: 500px;
   height: 250px;
-  border: 2px dashed ${({ primary}) => primary};
+  border: 2px dashed ${({ primary }) => primary};
   border-radius: 5px;
   margin: 20px auto;
   p {
-    color: ${({ primary}) => primary};
+    color: ${({ primary }) => primary};
     font-weight: bold;
   }
   span {

@@ -16,7 +16,7 @@ export default class ConfigManager {
 
   get theme(): Colors {
     return themes[this.config.theme];
-  } 
+  }
 
   private readConfig(): Configuration {
     const homeDirPath = process.env[
@@ -26,7 +26,7 @@ export default class ConfigManager {
     const stats = statSync(configFilePath);
 
     if (!stats) {
-      this.consoleErrorMessage(`${configFilePath} does not exists.`)
+      this.consoleErrorMessage(`${configFilePath} does not exists.`);
       return defaultConfig;
     }
 

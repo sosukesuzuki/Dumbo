@@ -4,9 +4,10 @@ import "github-markdown-css";
 import "highlight.js/styles/github.css";
 import markdownProcessor from "../../lib/markdownProcessor";
 import useFileContent from "../../lib/hooks/useFileContent";
+import useIsFileLoading from "../../lib/hooks/useIsFileLoading";
 import ThemeContext from "../../lib/contexts/ThemeContext";
 
-const Container = styled.div<{ body: string; primary: string; }>`
+const Container = styled.div<{ body: string; primary: string }>`
   padding: 20px;
   color: ${({ body }) => body};
   a {
@@ -17,10 +18,17 @@ const Container = styled.div<{ body: string; primary: string; }>`
 const Renderer: React.FC = () => {
   const fileContent = useFileContent();
   const { theme } = useContext(ThemeContext);
+  const isFileLoading = useIsFileLoading();
+
+  if (isFileLoading) {
+    return (
+      <p>...Loading</p>
+    )
+  }
 
   return (
     <Container
-      { ...theme }
+      {...theme}
       className="markdown-body"
       dangerouslySetInnerHTML={{
         __html: markdownProcessor.processSync(fileContent!).toString()

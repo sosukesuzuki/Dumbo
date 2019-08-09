@@ -27,7 +27,9 @@ const OpenFileButton: React.FC = () => {
   }
 
   return (
-    <PrimaryButton onClick={handleClick} {...theme}>Choose Markdown File</PrimaryButton>
+    <PrimaryButton onClick={handleClick} {...theme}>
+      Choose Markdown File
+    </PrimaryButton>
   );
 };
 
