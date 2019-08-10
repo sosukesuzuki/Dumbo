@@ -14,8 +14,6 @@ function createWindow() {
     }
   });
 
-  console.log({ isDev });
-
   isDev
     ? mainWindow.loadURL("http://localhost:3000/index.html")
     : mainWindow.loadFile(join(__dirname, "./index.html"));
