@@ -4,7 +4,7 @@ import FileContext from "../lib/contexts/FileContext";
 import ThemeContext from "../lib/contexts/ThemeContext";
 import Main from "./templates/Main";
 import SideNav from "./templates/SideNav";
-import { Colors } from "src/lib/themes";
+import { Colors } from "../lib/themes";
 
 const Container = styled.div`
   display: grid;
