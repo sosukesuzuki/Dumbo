@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import styled from "styled-components";
-import getMdFileFromDialog from "../../../lib/electron/getMdFileFromDialog";
+import getMdFileFromDialog from "../../../../lib/electron/getMdFileFromDialog";
 import FileContext from "../../../lib/contexts/FileContext";
 import ThemeContext from "../../../lib/contexts/ThemeContext";
 
