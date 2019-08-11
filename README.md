@@ -2,6 +2,8 @@
 
 Dumbo is the Markdown Previewer
 
+![Dumbo](./resources/dumbo.jpg)
+
 ## Development
 
 ```sh
