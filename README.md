@@ -1,6 +1,6 @@
-# Dumbo
+<h1 align="center">:elephant:Dumbo:elephant:</h1>
 
-Dumbo is the Markdown Previewer
+<p align="center">Dumbo is the Markdown Previewer</p>
 
 ![Dumbo](./resources/dumbo.jpg)
 
