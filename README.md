@@ -1,4 +1,4 @@
-<h1 align="center">:elephant:Dumbo:elephant:</h1>
+<h1 align="center">Dumbo</h1>
 
 <p align="center">Dumbo is the Markdown Previewer</p>
 
