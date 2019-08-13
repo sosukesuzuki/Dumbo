@@ -4,8 +4,7 @@ import LoadingElephant from "../atoms/LoadingElephant";
 import "github-markdown-css";
 import "highlight.js/styles/github.css";
 import markdownProcessor from "../../lib/markdownProcessor";
-import useFileContent from "../../lib/hooks/useFileContent";
-import useIsFileLoading from "../../lib/hooks/useIsFileLoading";
+import { useFileContent, useIsFileLoading } from "../../lib/hooks";
 import { ThemeContext } from "../../lib/contexts";
 
 const Container = styled.div<{ body: string; primary: string }>`

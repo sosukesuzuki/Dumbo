@@ -4,7 +4,7 @@ import { useContext, useState, useEffect } from "react";
 import { FileContext } from "../contexts";
 import readFile from "../fs/readFile";
 
-export default function(): null | string {
+export function useFileContent(): null | string {
   const { filepath } = useContext(FileContext);
   const [fileContent, setFileContent] = useState<null | string>(null);
 
