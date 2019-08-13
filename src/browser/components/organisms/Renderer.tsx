@@ -6,7 +6,7 @@ import "highlight.js/styles/github.css";
 import markdownProcessor from "../../lib/markdownProcessor";
 import useFileContent from "../../lib/hooks/useFileContent";
 import useIsFileLoading from "../../lib/hooks/useIsFileLoading";
-import ThemeContext from "../../lib/contexts/ThemeContext";
+import { ThemeContext } from "../../lib/contexts";
 
 const Container = styled.div<{ body: string; primary: string }>`
   padding: 20px;

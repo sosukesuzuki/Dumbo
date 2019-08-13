@@ -1,15 +1,13 @@
 import { createContext } from "react";
 
-export type State = {
+export type FileContextState = {
   filepath: string | null;
   setFilepath: (filepath: string) => void;
   resetFilepath: () => void;
 };
 
-const FileContext = createContext<State>({
+export const FileContext = createContext<FileContextState>({
   filepath: null,
   setFilepath: null as any,
   resetFilepath: null as any
 });
-
-export default FileContext;

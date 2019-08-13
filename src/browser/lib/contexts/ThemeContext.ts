@@ -1,12 +1,10 @@
 import { createContext } from "react";
 import { Colors, themes } from "../themes";
 
-export type State = {
+export type ThemeContextState = {
   theme: Colors;
 };
 
-const ThemeContext = createContext<State>({
+export const ThemeContext = createContext<ThemeContextState>({
   theme: themes.WHITE
 });
-
-export default ThemeContext;

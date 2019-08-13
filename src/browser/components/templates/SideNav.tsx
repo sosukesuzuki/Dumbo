@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
 import styled from "styled-components";
-import FileContext from "../../lib/contexts/FileContext";
-import ThemeContext from "../../lib/contexts/ThemeContext";
+import { FileContext, ThemeContext } from "../../lib/contexts";
 
 const Container = styled.div<{ primary: string }>`
   background-color: ${({ primary }) => primary};

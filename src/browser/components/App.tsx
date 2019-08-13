@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useCallback } from "react";
 import styled from "styled-components";
-import FileContext from "../lib/contexts/FileContext";
-import ThemeContext from "../lib/contexts/ThemeContext";
+import { FileContext, ThemeContext } from "../lib/contexts";
 import Main from "./templates/Main";
 import SideNav from "./templates/SideNav";
 import { Colors } from "../lib/themes";

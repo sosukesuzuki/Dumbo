@@ -1,6 +1,6 @@
 import { useMemo, useContext } from "react";
 import useFileContent from "./useFileContent";
-import FileContext from "../contexts/FileContext";
+import { FileContext } from "../contexts";
 
 export default function(): boolean {
   const fileContent = useFileContent();
