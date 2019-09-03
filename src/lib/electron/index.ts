@@ -1,1 +1,1 @@
-export * from "./getMdFileFromDialog";
+export * from './getMdFileFromDialog';

@@ -1,2 +1,2 @@
-export * from "./useFileContent";
-export * from "./useIsFileLoading";
+export * from './useFileContent';
+export * from './useIsFileLoading';

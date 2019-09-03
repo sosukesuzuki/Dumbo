@@ -1,2 +1,2 @@
-declare module "remark-html";
-declare module "remark-highlight.js";
+declare module 'remark-html';
+declare module 'remark-highlight.js';

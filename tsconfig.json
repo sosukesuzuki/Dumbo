@@ -1,31 +1,31 @@
 {
-  "compilerOptions": {
-    "target": "es5",
-    "module": "commonjs",
-    "jsx": "react",
-    "lib": ["esnext", "dom"],
-    "strict": true,
-    "noImplicitAny": true,
-    "strictNullChecks": true,
-    "strictFunctionTypes": true,
-    "strictPropertyInitialization": true,
-    "noImplicitThis": true,
-    "alwaysStrict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noImplicitReturns": true,
-    "noFallthroughCasesInSwitch": true,
-    "moduleResolution": "node",
-    "esModuleInterop": true,
-    "baseUrl": ".",
-    "outDir": "dist",
-    "typeRoots": ["./node_modules/@types", "index.d.ts"]
-  },
-  "include": [
-    "src/*.ts",
-    "src/index.tsx",
-    "index.d.ts",
-    "src/lib/index.d.ts",
-    "index.d.ts"
-  ]
+    "compilerOptions": {
+        "target": "es5",
+        "module": "commonjs",
+        "jsx": "react",
+        "lib": ["esnext", "dom"],
+        "strict": true,
+        "noImplicitAny": true,
+        "strictNullChecks": true,
+        "strictFunctionTypes": true,
+        "strictPropertyInitialization": true,
+        "noImplicitThis": true,
+        "alwaysStrict": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "noImplicitReturns": true,
+        "noFallthroughCasesInSwitch": true,
+        "moduleResolution": "node",
+        "esModuleInterop": true,
+        "baseUrl": ".",
+        "outDir": "dist",
+        "typeRoots": ["./node_modules/@types", "index.d.ts"]
+    },
+    "include": [
+        "src/*.ts",
+        "src/index.tsx",
+        "index.d.ts",
+        "src/lib/index.d.ts",
+        "index.d.ts"
+    ]
 }

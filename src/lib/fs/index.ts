@@ -1,5 +1,5 @@
-import fs from "fs";
-import { promisify } from "util";
+import fs from 'fs';
+import { promisify } from 'util';
 
 export const mkdir = promisify(fs.mkdir);
 export const readFile = promisify(fs.readFile);
