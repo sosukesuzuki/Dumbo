@@ -2,16 +2,16 @@ import React, { useContext } from 'react';
 import styled from 'styled-components';
 import { extname } from 'path';
 import { FileContext } from '../../../lib/contexts';
+import { gray } from '../../../lib/colors';
 
 const Container = styled.div`
     width: 500px;
     height: 250px;
-    border: 2px dashed black;
+    border: 2px dashed ${gray[2]};
     border-radius: 5px;
     margin: 20px auto;
     p {
-        color: black;
-        font-weight: bold;
+        color: ${gray[3]};
     }
     span {
         display: block;

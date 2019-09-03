@@ -1,9 +1,10 @@
 import React, { useContext } from 'react';
 import styled from 'styled-components';
+import { gray } from "../../lib/colors";
 import { FileContext } from '../../lib/contexts';
 
 const Container = styled.div`
-    background-color: blue;
+    background-color: ${gray[2]};
     display: flex;
     flex-flow: column;
     align-items: center;
@@ -19,7 +20,7 @@ const EmojiButton = styled.button`
     width: 60px;
     height: 60px;
     &:hover {
-        background-color: rgba(1, 1, 1, 0.1);
+        background-color: ${gray[3]};
     }
 `;
 
