@@ -1,9 +1,8 @@
 import React, { useState, useEffect, useCallback } from "react";
 import styled from "styled-components";
-import { FileContext, ThemeContext } from "../lib/contexts";
+import { FileContext } from "../lib/contexts";
 import Main from "./templates/Main";
 import SideNav from "./templates/SideNav";
-import { Colors } from "../lib/themes";
 
 const Container = styled.div`
   display: grid;
@@ -11,11 +10,7 @@ const Container = styled.div`
   grid-template-columns: 100px 1fr;
 `;
 
-type Props = {
-  theme: Colors;
-};
-
-const App: React.FC<Props> = ({ theme }) => {
+const App: React.FC = () => {
   const [filepath, setFilepath] = useState<string | null>(null);
 
   useEffect(() => {
@@ -31,14 +26,12 @@ const App: React.FC<Props> = ({ theme }) => {
   }, [setFilepath]);
 
   return (
-    <ThemeContext.Provider value={{ theme }}>
       <FileContext.Provider value={{ filepath, setFilepath, resetFilepath }}>
         <Container>
           <SideNav />
           <Main />
         </Container>
       </FileContext.Provider>
-    </ThemeContext.Provider>
   );
 };
 

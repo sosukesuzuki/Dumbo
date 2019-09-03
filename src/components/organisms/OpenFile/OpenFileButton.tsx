@@ -1,11 +1,11 @@
 import React, { useContext } from "react";
 import styled from "styled-components";
 import getMdFileFromDialog from "../../../lib/electron/getMdFileFromDialog";
-import { FileContext, ThemeContext } from "../../../lib/contexts";
+import { FileContext } from "../../../lib/contexts";
 
-const PrimaryButton = styled.button<{ primary: string }>`
+const PrimaryButton = styled.button`
   cursor: pointer;
-  background-color: ${({ primary }) => primary};
+  background-color: blue;
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -16,7 +16,6 @@ const PrimaryButton = styled.button<{ primary: string }>`
 
 const OpenFileButton: React.FC = () => {
   const { setFilepath } = useContext(FileContext);
-  const { theme } = useContext(ThemeContext);
 
   async function handleClick() {
     const filenames = await getMdFileFromDialog();
@@ -26,7 +25,7 @@ const OpenFileButton: React.FC = () => {
   }
 
   return (
-    <PrimaryButton onClick={handleClick} {...theme}>
+    <PrimaryButton onClick={handleClick}>
       Choose Markdown File
     </PrimaryButton>
   );

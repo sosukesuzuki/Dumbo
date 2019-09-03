@@ -2,7 +2,7 @@ import fs from "fs";
 import { dirname } from "path";
 import { useContext, useState, useEffect } from "react";
 import { FileContext } from "../contexts";
-import readFile from "../fs/readFile";
+import { readFile } from "../fs";
 
 export function useFileContent(): null | string {
   const { filepath } = useContext(FileContext);

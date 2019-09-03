@@ -1,23 +1,21 @@
-import React, { useContext } from "react";
+import React from "react";
 import styled from "styled-components";
 import LoadingElephant from "../atoms/LoadingElephant";
 import "github-markdown-css";
 import "highlight.js/styles/github.css";
-import markdownProcessor from "../../lib/markdownProcessor";
+import { markdown } from "../../lib/processor";
 import { useFileContent, useIsFileLoading } from "../../lib/hooks";
-import { ThemeContext } from "../../lib/contexts";
 
-const Container = styled.div<{ body: string; primary: string }>`
+const Container = styled.div`
   padding: 20px;
-  color: ${({ body }) => body};
+  color: black;
   a {
-    color: ${({ primary }) => primary};
+    color: blue;
   }
 `;
 
 const Renderer: React.FC = () => {
   const fileContent = useFileContent();
-  const { theme } = useContext(ThemeContext);
   const isFileLoading = useIsFileLoading();
 
   if (isFileLoading) {
@@ -26,10 +24,9 @@ const Renderer: React.FC = () => {
 
   return (
     <Container
-      {...theme}
       className="markdown-body"
       dangerouslySetInnerHTML={{
-        __html: markdownProcessor.processSync(fileContent!).toString()
+        __html: markdown.processSync(fileContent!).toString()
       }}
     />
   );

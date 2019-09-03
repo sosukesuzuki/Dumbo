@@ -2,18 +2,17 @@ import React, { useContext } from "react";
 import styled from "styled-components";
 import Renderer from "../organisms/Renderer";
 import OpenFileBox from "../organisms/OpenFile/OpenFileBox";
-import { FileContext, ThemeContext } from "../../lib/contexts";
+import { FileContext } from "../../lib/contexts";
 
-const Container = styled.div<{ background: string }>`
+const Container = styled.div`
   overflow-y: scroll;
-  background-color: ${({ background }) => background};
+  background-color: white;
 `;
 
 const Main: React.FC = () => {
   const { filepath } = useContext(FileContext);
-  const { theme } = useContext(ThemeContext);
   return (
-    <Container {...theme}>
+    <Container>
       {!filepath ? <OpenFileBox /> : <Renderer />}
     </Container>
   );

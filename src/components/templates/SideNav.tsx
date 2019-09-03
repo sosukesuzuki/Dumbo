@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
 import styled from "styled-components";
-import { FileContext, ThemeContext } from "../../lib/contexts";
+import { FileContext } from "../../lib/contexts";
 
-const Container = styled.div<{ primary: string }>`
-  background-color: ${({ primary }) => primary};
+const Container = styled.div`
+  background-color: blue;
   display: flex;
   flex-flow: column;
   align-items: center;
@@ -25,10 +25,9 @@ const EmojiButton = styled.button`
 
 const SideNav: React.FC = () => {
   const { resetFilepath } = useContext(FileContext);
-  const { theme } = useContext(ThemeContext);
 
   return (
-    <Container primary={theme.primary}>
+    <Container>
       <EmojiButton
         onClick={() => {
           resetFilepath();
