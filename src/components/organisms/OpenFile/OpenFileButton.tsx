@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import styled from "styled-components";
-import getMdFileFromDialog from "../../../lib/electron/getMdFileFromDialog";
+import { getMdFileFromDialog } from "../../../lib/electron";
 import { FileContext } from "../../../lib/contexts";
 
 const PrimaryButton = styled.button`
