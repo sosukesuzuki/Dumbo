@@ -44,7 +44,7 @@
         "webpack-dev-server": "^3.7.2"
     },
     "dependencies": {
-        "electron": "^5.0.8",
+        "electron": "^7.2.4",
         "github-markdown-css": "^3.0.1",
         "normalize.css": "^8.0.1",
         "prettier": "^1.18.2",
