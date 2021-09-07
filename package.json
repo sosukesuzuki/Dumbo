@@ -52,7 +52,7 @@
         "react-dom": "^16.8.6",
         "remark": "^11.0.1",
         "remark-highlight.js": "^5.1.1",
-        "remark-html": "^10.0.0",
+        "remark-html": "^13.0.2",
         "styled-components": "^4.3.2"
     }
 }
